@@ -28,7 +28,7 @@ class TodoComponent extends Component<Props> {
                 <td className="has-text-centered" style={{ verticalAlign: 'middle' }}>
                     {!this.props.data.isCompleted ? (
                         <button className="button is-info is-outlined is-small" onClick={this.handleCompleted}>
-                            Mark as completed
+                            Done
                         </button>
                     ) : (
                         <FontAwesomeIcon icon={faCheck} style={{ color: 'green' }} />

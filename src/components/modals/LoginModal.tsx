@@ -63,7 +63,7 @@ class LoginModal extends Component<Props, State> {
                 <div className="modal-card">
                     <Form onSubmit={this.handleSubmit}>
                         <header className="modal-card-head">
-                            <p className="modal-card-title">Log in</p>
+                            <p className="modal-card-title">Log-in</p>
                             <button
                                 type="button"
                                 className="delete"

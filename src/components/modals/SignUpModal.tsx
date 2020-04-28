@@ -166,7 +166,7 @@ class SignUpModal extends Component<Props, State> {
                             </div>
                             Already have an account?{' '}
                             <a href="#" onClick={this.props.openloginModal}>
-                                log in
+                                log-in
                             </a>
                             .
                         </section>
