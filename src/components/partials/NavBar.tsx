@@ -75,8 +75,10 @@ class NavBar extends Component<Props & RouteComponentProps, State> {
                                     src="https://github.com/krypton-org/krypton-web/raw/master/img/logo-krypton-web.png"
                                     width="30"
                                     height="30"
+                                    alt="krypton web logo"
                                 />
                             </a>
+                            {/* eslint-disable-next-line */}
                             <a
                                 role="button"
                                 className="navbar-burger burger"
@@ -101,12 +103,14 @@ class NavBar extends Component<Props & RouteComponentProps, State> {
                             <div className="navbar-end">
                                 {this.props.isLoggedIn ? (
                                     <div className="navbar-item has-dropdown is-hoverable">
+                                        {/* eslint-disable-next-line */}
                                         <a className="navbar-link">{this.props.user?.email}</a>
 
                                         <div className="navbar-dropdown">
                                             <Link className="navbar-item" to="/settings">
                                                 Settings
                                             </Link>
+                                            {/* eslint-disable-next-line */}
                                             <a className="navbar-item" onClick={this.logOut}>
                                                 Log out
                                             </a>
@@ -114,10 +118,13 @@ class NavBar extends Component<Props & RouteComponentProps, State> {
                                     </div>
                                 ) : (
                                     <div className="navbar-item">
+                                        {/* eslint-disable-next-line */}
                                         <div className="buttons">
+                                            {/* eslint-disable-next-line */}
                                             <a className="button is-primary" onClick={this.openSignupModal}>
                                                 <strong>Sign up</strong>
                                             </a>
+                                            {/* eslint-disable-next-line */}
                                             <a className="button is-light" onClick={this.openLoginModal}>
                                                 Log-in
                                             </a>

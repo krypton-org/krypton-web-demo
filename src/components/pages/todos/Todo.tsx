@@ -13,7 +13,7 @@ interface Props {
 }
 
 class TodoComponent extends Component<Props> {
-    handleClose = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>): void | undefined => {
+    handleClose = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void | undefined => {
         this.props.dispatch(deleteTodo(this.props.data._id));
     };
 
@@ -39,7 +39,7 @@ class TodoComponent extends Component<Props> {
                     <TimeAgo date={date} minPeriod={10}/>
                 </td>
                 <td style={{ verticalAlign: 'middle' }}>
-                    <a className="delete" onClick={this.handleClose}></a>
+                    <button className="delete" onClick={this.handleClose}></button>
                 </td>
             </tr>
         );

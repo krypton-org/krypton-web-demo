@@ -6,3 +6,16 @@ p {
   margin-top: 20px; 
   margin-bottom: 20px; 
 }
+
+.button-link {
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  color: #3273dc;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.button-link:hover {
+  color: #363636;
+}
