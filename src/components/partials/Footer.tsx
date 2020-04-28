@@ -14,8 +14,7 @@ export default () => {
         <footer className="footer" style={style}>
             <div className="content has-text-centered">
                 <p>
-                    <strong>Krypton Demo Webapp</strong>. The source code is licensed{' '}
-                    <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+                    <strong>Krypton Web Demonstration</strong>. The source code is available under the <a href="https://github.com/krypton-org/krypton-web-demo/blob/master/LICENSE">MIT</a> license.
                 </p>
             </div>
         </footer>
