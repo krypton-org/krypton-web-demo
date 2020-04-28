@@ -144,7 +144,7 @@ async function sendRequest(authorizationHeader: string, query: any): Promise<any
 
     headers['Authorization'] = authorizationHeader;
 
-    const res = await fetch('http://localhost:5006', {
+    const res = await fetch('https://nusid.net/todos', {
         method: 'POST',
         headers,
         credentials: 'include',
