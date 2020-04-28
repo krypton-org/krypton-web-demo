@@ -20,6 +20,7 @@ interface State {
     loginModal: boolean;
     signUpModal: boolean;
     recoverPasswordModal: boolean;
+    isBurgerMenuActive: boolean;
 }
 
 class NavBar extends Component<Props & RouteComponentProps, State> {
@@ -29,29 +30,34 @@ class NavBar extends Component<Props & RouteComponentProps, State> {
             loginModal: false,
             signUpModal: false,
             recoverPasswordModal: false,
+            isBurgerMenuActive: false
         };
     }
 
     openSignupModal = (e: React.MouseEvent<Element, MouseEvent>) => {
-        this.setState({ loginModal: false, recoverPasswordModal: false, signUpModal: true });
+        this.setState({ ...this.state, loginModal: false, recoverPasswordModal: false, signUpModal: true });
     };
 
     closeModals = (e?: React.MouseEvent<Element, MouseEvent>) => {
-        this.setState({ loginModal: false, recoverPasswordModal: false, signUpModal: false });
+        this.setState({ ...this.state, loginModal: false, recoverPasswordModal: false, signUpModal: false });
     };
 
     openLoginModal = (e: React.MouseEvent<Element, MouseEvent>) => {
-        this.setState({ loginModal: true, recoverPasswordModal: false, signUpModal: false });
+        this.setState({ ...this.state, loginModal: true, recoverPasswordModal: false, signUpModal: false });
     };
 
     openRecoverPasswordModalModal = (e: React.MouseEvent<Element, MouseEvent>) => {
-        this.setState({ loginModal: false, recoverPasswordModal: true, signUpModal: false });
+        this.setState({ ...this.state, loginModal: false, recoverPasswordModal: true, signUpModal: false });
     };
 
     logOut = (e: React.MouseEvent<Element, MouseEvent>) => {
         this.props.dispatch(logOut());
         this.props.history.push('/');
     };
+
+    setIsBurgerMenuActive = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+        this.setState({ ...this.state, isBurgerMenuActive: !this.state.isBurgerMenuActive });
+    }
 
     componentDidUpdate(prevProps: any) {
         if (prevProps.isTransactionLoading && !this.props.isTransactionLoading && this.props.isTransactionSuccess) {
@@ -70,7 +76,7 @@ class NavBar extends Component<Props & RouteComponentProps, State> {
                 >
                     <div className="container">
                         <div className="navbar-brand">
-                            <a className="navbar-item" href="https://github.com/krypton-org/krypton-web-demo">
+                            <a className="navbar-item" href="https://krypton-org.github.io/krypton-web-demo/">
                                 <img
                                     src="https://github.com/krypton-org/krypton-web/raw/master/img/logo-krypton-web.png"
                                     width="30"
@@ -78,14 +84,28 @@ class NavBar extends Component<Props & RouteComponentProps, State> {
                                     alt="krypton web logo"
                                 />
                             </a>
+                            {/* eslint-disable-next-line */}
+                            <a
+                                onClick={ this.setIsBurgerMenuActive }
+                                role="button"
+                                className={`navbar-burger burger ${this.state.isBurgerMenuActive ? "is-active" : ""}`}
+                                aria-label="menu"
+                                aria-expanded="false"
+                                data-target="navbarBasicExample"
+                            >
+                                <span aria-hidden="true"></span>
+                                <span aria-hidden="true"></span>
+                                <span aria-hidden="true"></span>
+                            </a>
+                
                         </div>
-                        <div id="navbarBasicExample" className="navbar-menu">
+                        <div id="navbarBasicExample" className={`navbar-menu ${this.state.isBurgerMenuActive ? "is-active" : ""}`}>
                             <div className="navbar-start">
                                 <Link className="navbar-item" to="/">
                                     Home
                                 </Link>
                                 <Link className="navbar-item" to="/todos">
-                                    To-do List
+                                    Todos
                                 </Link>
                             </div>
                             <div className="navbar-end">
