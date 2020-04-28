@@ -16,7 +16,7 @@ export default () => {
                     This is just a demo, the database is purged each night. It aims to show how easy it is to use
                     Krypton for website authentication.
                 </p>
-                <p>Check the github source <a href="https://github.com/krypton-org/krypton-web-demo" target="_blank" rel="noopener noreferrer">here</a>.</p>
+                <p>Check source on <a href="https://github.com/krypton-org/krypton-web-demo" target="_blank" rel="noopener noreferrer">GitHub</a></p>
             </div>
         </div>
     );

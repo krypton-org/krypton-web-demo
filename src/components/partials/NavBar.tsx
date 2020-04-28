@@ -70,7 +70,7 @@ class NavBar extends Component<Props & RouteComponentProps, State> {
                 >
                     <div className="container">
                         <div className="navbar-brand">
-                            <a className="navbar-item" href="https://krypton-org.github.io/krypton-web-demo/">
+                            <a className="navbar-item" href="https://github.com/krypton-org/krypton-web-demo">
                                 <img
                                     src="https://github.com/krypton-org/krypton-web/raw/master/img/logo-krypton-web.png"
                                     width="30"
@@ -85,7 +85,7 @@ class NavBar extends Component<Props & RouteComponentProps, State> {
                                     Home
                                 </Link>
                                 <Link className="navbar-item" to="/todos">
-                                    Todos
+                                    To-do List
                                 </Link>
                             </div>
                             <div className="navbar-end">
