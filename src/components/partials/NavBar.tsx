@@ -70,7 +70,7 @@ class NavBar extends Component<Props & RouteComponentProps, State> {
                 >
                     <div className="container">
                         <div className="navbar-brand">
-                            <a className="navbar-item" href="https://bulma.io">
+                            <a className="navbar-item" href="https://krypton-org.github.io/krypton-web-demo/">
                                 <img
                                     src="https://github.com/krypton-org/krypton-web/raw/master/img/logo-krypton-web.png"
                                     width="30"
