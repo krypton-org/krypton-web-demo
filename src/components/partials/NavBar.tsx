@@ -119,7 +119,7 @@ class NavBar extends Component<Props & RouteComponentProps, State> {
                                                 <strong>Sign up</strong>
                                             </a>
                                             <a className="button is-light" onClick={this.openLoginModal}>
-                                                Log in
+                                                Log-in
                                             </a>
                                         </div>
                                     </div>

@@ -9,7 +9,7 @@ import { checkLoginState } from '../redux/actions/AuthActions';
 import { RootState } from '../redux/Root';
 import { Dispatch } from 'redux';
 import ToastContainer from './partials/ToastContainer';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import Settings from './pages/settings/Index';
 import Todos from './pages/todos/Index';
 import PrivateRoute from './utils/PrivateRoute';

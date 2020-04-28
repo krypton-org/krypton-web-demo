@@ -6,7 +6,7 @@ export default () => {
             <section className="hero is-primary">
                 <div className="hero-body">
                     <div className="container">
-                        <h1 className="title">Welcome to this Krypton demo app. It is a simple todo list ;)</h1>
+                        <h1 className="title">Welcome to this todo list app made with React and Krypton for authentication.</h1>
                         <h2 className="subtitle">Register to add your todos!</h2>
                     </div>
                 </div>
