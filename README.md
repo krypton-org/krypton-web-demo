@@ -3,6 +3,10 @@
 </p>
 <p align="center">
     <i>To-Do List made with Krypton Authentication, React and Redux.</i>
+    <br/><br/>
+    <a href="https://github.com/krypton-org/krypton-web-demo/actions">
+      <img src="https://github.com/krypton-org/krypton-web-demo/workflows/Github%20Page%20Deploy/badge.svg">
+    </a>
 </p>
 
 This repository shows how to use Krypton for user authentication in a React app.  
