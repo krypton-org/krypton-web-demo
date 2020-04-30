@@ -3,7 +3,7 @@
 </p>
 <p align="center">
 
-This repository aims to show how easy it is to use Krypton for authentication in web apps. It features a simple To-Do list and a complete userspace. Authenticate yourself to start adding your To-Dos. This web app is built with React, Redux and Bulma for CSS.
+This repository aims to show how easy it is to use Krypton for authentication in web apps. It features a simple To-Do List and a complete userspace. Authenticate yourself to start adding your To-Dos. This web app is built with React, Redux and Bulma for CSS.
 
 Here is the [demo](https://github.com/krypton-org/krypton-web-demo).
 
