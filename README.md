@@ -45,7 +45,7 @@ export const login = (email: string, password: string) => {
                     type: Severity.SUCCESS,
                 }),
             );
-        } catch (err) { // If krypton.login fails, it will throw an error
+        } catch (err) { // If krypton.login() fails, it will throw an error
             dispatch(transactionFailure(err.message));
         }
     };
