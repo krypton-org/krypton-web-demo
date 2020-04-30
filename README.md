@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/krypton-org/krypton-web-demo/raw/master/img/banner.svg" width="470px"/>
+<a href="https://krypton-org.github.io/krypton-web-demo/"><img src="https://github.com/krypton-org/krypton-web-demo/raw/master/img/banner.svg" width="470px"/></a>
 </p>
 <p align="center">
 
