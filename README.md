@@ -1,9 +1,9 @@
 <p align="center">
-<img src="https://github.com/krypton-org/krypton-web-demo/raw/master/img/banner.svg" width="500px"/>
+<img src="https://github.com/krypton-org/krypton-web-demo/raw/master/img/banner.svg" width="470px"/>
 </p>
 <p align="center">
 
-Web App Demo using Krypton for authentication. It features a simple To-Do list and a complete userspace. Authenticate yourself to start adding your To-Dos. This web app is built with [React](https://reactjs.org/), [Redux](https://redux.js.org/) and [Bulma](https://bulma.io/) for CSS.
+Web App Demo using Krypton for authentication. It features a simple To-Do List and a complete userspace. Authenticate yourself to start adding your To-Dos. This web app is built with [React](https://reactjs.org/), [Redux](https://redux.js.org/) and [Bulma](https://bulma.io/) for CSS.
 
 Here is the [link](https://github.com/krypton-org/krypton-web-demo).
 
