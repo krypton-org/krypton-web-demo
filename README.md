@@ -2,16 +2,20 @@
 <a href="https://krypton-org.github.io/krypton-web-demo/"><img src="https://github.com/krypton-org/krypton-web-demo/raw/master/img/banner.svg" width="470px"/></a>
 </p>
 <p align="center">
+    <i>To-Do List made with Krypton Authentication, React and Redux.</i>
+</p>
 
-Web App Demo using Krypton for authentication. It features a simple To-Do List and a complete userspace. Authenticate yourself to start adding your To-Dos. This web app is built with [React](https://reactjs.org/), [Redux](https://redux.js.org/) and [Bulma](https://bulma.io/) for CSS.
+This repository shows how to use Krypton for user authentication in a React app.  
+It is built with [React](https://reactjs.org/), [Redux](https://redux.js.org/) and [Bulma](https://bulma.io/) for CSS.
 
-Here is the [link](https://github.com/krypton-org/krypton-web-demo).
+- [**Online Demonstration**](https://krypton-org.github.io/krypton-web-demo) — Sign up to start adding to-dos. The database is reset every day.
 
 ## How does it work?
 
-This React App use [krypton-web](https://github.com/krypton-org/krypton-web) for authentication on the front-end. On the back-end, there is an instance of [krypton-auth](https://github.com/krypton-org/krypton-auth) running [here](https://nusid.net/krypton-auth)  and a simple back-end saving the To-Dos.
+This React application uses [krypton-web](https://github.com/krypton-org/krypton-web) for authentication on the front-end.  
+On the back-end, it uses a [sandbox](https://nusid.net/krypton-auth) instance of [krypton-auth](https://github.com/krypton-org/krypton-auth) and a simple back-end for saving the to-dos.
 
-By opening the app in your browser, it creates a [Redux](https://redux.js.org/) store containing the app state and an instance of [krypton-auth](https://github.com/krypton-org/krypton-auth).
+When the application is loaded, it creates a [Redux](https://redux.js.org/) store containing the app state and an instance of [krypton-web](https://github.com/krypton-org/krypton-web).
 
 ```javascript
 // src/redux/reducers/AuthReducer.ts
@@ -25,8 +29,9 @@ const initialState: AuthState = {
     transactionType: null,
 };
 ```
-The different methods of [krypton-web] like log-in, registration are called within [Redux Thunks](https://daveceddia.com/what-is-a-thunk/), which are themselves called by React components. When performed those actions change the app state and trigger its re-rendering.
 
+The different methods of [krypton-web](https://github.com/krypton-org/krypton-web) (log-in, registration ...) are called within [Redux Thunks](https://daveceddia.com/what-is-a-thunk/), which are themselves called by React components.
+These methods update the application state, which in turn, triggers a re-rendering of the components.
 
 ```javascript
 // src/redux/actions/AuthActions.ts
@@ -62,7 +67,8 @@ npm run start
 ```
 
 ### Build
-Builds the app for production to the build folder.
+
+To build the producation application in the `build/` folder:
 ```bash
 npm run build
 ```
