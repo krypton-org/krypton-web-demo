@@ -3,15 +3,15 @@
 </p>
 <p align="center">
 
-This repository aims to show how easy it is to use Krypton for authentication in web apps. It features a simple To-Do list and a complete userspace. Authenticate yourself to start adding your To-Dos. This web app is built with React, Redux and Bulma for CSS.
+Web App Demo using Krypton for authentication. It features a simple To-Do list and a complete userspace. Authenticate yourself to start adding your To-Dos. This web app is built with [React](https://reactjs.org/), [Redux](https://redux.js.org/) and [Bulma](https://bulma.io/) for CSS.
 
-Here is the [demo](https://github.com/krypton-org/krypton-web-demo).
+Here is the [link](https://github.com/krypton-org/krypton-web-demo).
 
 ## How does it work?
 
-This React App use [krypton-web] for authentication on the front-end. On the back-end, there is an instance of [krypton-auth] running [here](https://nusid.net/krypton-auth)  and a simple back-end saving the To-Dos.
+This React App use [krypton-web](https://github.com/krypton-org/krypton-web) for authentication on the front-end. On the back-end, there is an instance of [krypton-auth](https://github.com/krypton-org/krypton-auth) running [here](https://nusid.net/krypton-auth)  and a simple back-end saving the To-Dos.
 
-By opening the app in your browser, it creates a [Redux] store containing the app state and an instance of [krypton-auth].
+By opening the app in your browser, it creates a [Redux](https://redux.js.org/) store containing the app state and an instance of [krypton-auth](https://github.com/krypton-org/krypton-auth).
 
 ```javascript
 // src/redux/reducers/AuthReducer.ts
