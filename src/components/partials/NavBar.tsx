@@ -30,24 +30,44 @@ class NavBar extends Component<Props & RouteComponentProps, State> {
             loginModal: false,
             signUpModal: false,
             recoverPasswordModal: false,
-            isBurgerMenuActive: false
+            isBurgerMenuActive: false,
         };
     }
 
     openSignupModal = (e: React.MouseEvent<Element, MouseEvent>) => {
-        this.setState({ ...this.state, loginModal: false, recoverPasswordModal: false, signUpModal: true });
+        this.setState({
+            ...this.state,
+            loginModal: false,
+            recoverPasswordModal: false,
+            signUpModal: true,
+        });
     };
 
     closeModals = (e?: React.MouseEvent<Element, MouseEvent>) => {
-        this.setState({ ...this.state, loginModal: false, recoverPasswordModal: false, signUpModal: false });
+        this.setState({
+            ...this.state,
+            loginModal: false,
+            recoverPasswordModal: false,
+            signUpModal: false,
+        });
     };
 
     openLoginModal = (e: React.MouseEvent<Element, MouseEvent>) => {
-        this.setState({ ...this.state, loginModal: true, recoverPasswordModal: false, signUpModal: false });
+        this.setState({
+            ...this.state,
+            loginModal: true,
+            recoverPasswordModal: false,
+            signUpModal: false,
+        });
     };
 
     openRecoverPasswordModalModal = (e: React.MouseEvent<Element, MouseEvent>) => {
-        this.setState({ ...this.state, loginModal: false, recoverPasswordModal: true, signUpModal: false });
+        this.setState({
+            ...this.state,
+            loginModal: false,
+            recoverPasswordModal: true,
+            signUpModal: false,
+        });
     };
 
     logOut = (e: React.MouseEvent<Element, MouseEvent>) => {
@@ -56,8 +76,11 @@ class NavBar extends Component<Props & RouteComponentProps, State> {
     };
 
     setIsBurgerMenuActive = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-        this.setState({ ...this.state, isBurgerMenuActive: !this.state.isBurgerMenuActive });
-    }
+        this.setState({
+            ...this.state,
+            isBurgerMenuActive: !this.state.isBurgerMenuActive,
+        });
+    };
 
     componentDidUpdate(prevProps: any) {
         if (prevProps.isTransactionLoading && !this.props.isTransactionLoading && this.props.isTransactionSuccess) {
@@ -86,9 +109,9 @@ class NavBar extends Component<Props & RouteComponentProps, State> {
                             </a>
                             {/* eslint-disable-next-line */}
                             <a
-                                onClick={ this.setIsBurgerMenuActive }
+                                onClick={this.setIsBurgerMenuActive}
                                 role="button"
-                                className={`navbar-burger burger ${this.state.isBurgerMenuActive ? "is-active" : ""}`}
+                                className={`navbar-burger burger ${this.state.isBurgerMenuActive ? 'is-active' : ''}`}
                                 aria-label="menu"
                                 aria-expanded="false"
                                 data-target="navbarBasicExample"
@@ -97,9 +120,11 @@ class NavBar extends Component<Props & RouteComponentProps, State> {
                                 <span aria-hidden="true"></span>
                                 <span aria-hidden="true"></span>
                             </a>
-                
                         </div>
-                        <div id="navbarBasicExample" className={`navbar-menu ${this.state.isBurgerMenuActive ? "is-active" : ""}`}>
+                        <div
+                            id="navbarBasicExample"
+                            className={`navbar-menu ${this.state.isBurgerMenuActive ? 'is-active' : ''}`}
+                        >
                             <div className="navbar-start">
                                 <Link className="navbar-item" to="/">
                                     Home

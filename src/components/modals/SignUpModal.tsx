@@ -43,7 +43,11 @@ class SignUpModal extends Component<Props, State> {
     }
 
     handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-        this.setState({ ...this.state, email: event.target.value, isEmailValid: isEmailValid(event.target.value) });
+        this.setState({
+            ...this.state,
+            email: event.target.value,
+            isEmailValid: isEmailValid(event.target.value),
+        });
     };
 
     handlePasswordChange = (event: React.ChangeEvent<HTMLInputElement>): void => {

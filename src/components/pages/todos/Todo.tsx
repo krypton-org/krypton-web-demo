@@ -36,7 +36,7 @@ class TodoComponent extends Component<Props> {
                 </td>
                 <td style={{ verticalAlign: 'middle' }}>{this.props.data.text}</td>
                 <td style={{ verticalAlign: 'middle' }}>
-                    <TimeAgo date={date} minPeriod={10}/>
+                    <TimeAgo date={date} minPeriod={10} />
                 </td>
                 <td style={{ verticalAlign: 'middle' }}>
                     <button className="delete" onClick={this.handleClose}></button>

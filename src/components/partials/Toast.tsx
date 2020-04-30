@@ -36,7 +36,7 @@ export default class Toast extends Component<Prop, State> {
         if (this.state.hide) {
             hidedStyle = {
                 opacity: 0,
-                display: 'none'
+                display: 'none',
             };
         }
         let animationStyle = {

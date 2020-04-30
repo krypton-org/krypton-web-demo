@@ -17,25 +17,22 @@ export const checkLoginState = () => {
 };
 
 export const login = (email: string, password: string) => {
-    return (dispatch: any, getState: () => RootState) => {
-        (async () => {
-            dispatch(transactionBegin(AuthTransactionType.LOGIN));
-            try {
-                await getState().auth.krypton.login(email, password);
-                dispatch(transactionSuccess());
-                dispatch(addLoggedUSer(getState().auth.krypton.getUser()));
-                dispatch(
-                    notify({
-                        message: 'Log-in successful!',
-                        date: new Date(),
-                        type: Severity.SUCCESS,
-                        title: Severity.SUCCESS.charAt(0).toUpperCase() + Severity.SUCCESS.slice(1),
-                    }),
-                );
-            } catch (err) {
-                dispatch(transactionFailure(err.message));
-            }
-        })();
+    return async (dispatch: any, getState: () => RootState) => {
+        dispatch(transactionBegin(AuthTransactionType.LOGIN));
+        try {
+            await getState().auth.krypton.login(email, password);
+            dispatch(transactionSuccess());
+            dispatch(addLoggedUSer(getState().auth.krypton.getUser()));
+            dispatch(
+                notify({
+                    message: 'Log-in successful!',
+                    date: new Date(),
+                    type: Severity.SUCCESS,
+                }),
+            );
+        } catch (err) {
+            dispatch(transactionFailure(err.message));
+        }
     };
 };
 
@@ -46,130 +43,113 @@ export const logout = () => {
 };
 
 export const register = (email: string, password: string) => {
-    return (dispatch: any, getState: () => RootState) => {
-        (async () => {
-            dispatch(transactionBegin(AuthTransactionType.REGISTER));
-            try {
-                await getState().auth.krypton.register(email, password);
-                dispatch(transactionSuccess());
-                dispatch(
-                    notify({
-                        message: 'Register successful!',
-                        date: new Date(),
-                        type: Severity.SUCCESS,
-                        title: Severity.SUCCESS.charAt(0).toUpperCase() + Severity.SUCCESS.slice(1),
-                    }),
-                );
-            } catch (err) {
-                dispatch(transactionFailure(err.message));
-            }
-        })();
+    return async (dispatch: any, getState: () => RootState) => {
+        dispatch(transactionBegin(AuthTransactionType.REGISTER));
+        try {
+            await getState().auth.krypton.register(email, password);
+            dispatch(transactionSuccess());
+            dispatch(
+                notify({
+                    message: 'Register successful!',
+                    date: new Date(),
+                    type: Severity.SUCCESS,
+                }),
+            );
+        } catch (err) {
+            dispatch(transactionFailure(err.message));
+        }
     };
 };
 
 export const recoverPassword = (email: string) => {
-    return (dispatch: any, getState: () => RootState) => {
-        (async () => {
-            dispatch(transactionBegin(AuthTransactionType.RECOVER_PASSWORD));
-            try {
-                await getState().auth.krypton.recoverPassword(email);
-                dispatch(transactionSuccess());
-                dispatch(
-                    notify({
-                        message: 'If your email exists you will receive an email shortly to recover your password.',
-                        date: new Date(),
-                        type: Severity.INFO,
-                        title: Severity.INFO.charAt(0).toUpperCase() + Severity.INFO.slice(1),
-                    }),
-                );
-            } catch (err) {
-                dispatch(transactionFailure(err.message));
-            }
-        })();
+    return async (dispatch: any, getState: () => RootState) => {
+        dispatch(transactionBegin(AuthTransactionType.RECOVER_PASSWORD));
+        try {
+            await getState().auth.krypton.recoverPassword(email);
+            dispatch(transactionSuccess());
+            dispatch(
+                notify({
+                    message: 'If your email exists you will receive an email shortly to recover your password.',
+                    date: new Date(),
+                    type: Severity.INFO,
+                }),
+            );
+        } catch (err) {
+            dispatch(transactionFailure(err.message));
+        }
     };
 };
 
 export const changePassword = (actualPassword: string, newPassword: string) => {
-    return (dispatch: any, getState: () => RootState) => {
-        (async () => {
-            dispatch(transactionBegin(AuthTransactionType.CHANGE_PASSWORD));
-            try {
-                await getState().auth.krypton.changePassword(actualPassword, newPassword);
-                dispatch(transactionSuccess());
-                dispatch(
-                    notify({
-                        message: 'Your password has been changed.',
-                        date: new Date(),
-                        type: Severity.SUCCESS,
-                        title: Severity.SUCCESS.charAt(0).toUpperCase() + Severity.SUCCESS.slice(1),
-                    }),
-                );
-            } catch (err) {
-                dispatch(transactionFailure());
-                dispatch(
-                    notify({
-                        message: err.message,
-                        date: new Date(),
-                        type: Severity.DANGER,
-                        title: 'Error',
-                    }),
-                );
-            }
-        })();
+    return async (dispatch: any, getState: () => RootState) => {
+        dispatch(transactionBegin(AuthTransactionType.CHANGE_PASSWORD));
+        try {
+            await getState().auth.krypton.changePassword(actualPassword, newPassword);
+            dispatch(transactionSuccess());
+            dispatch(
+                notify({
+                    message: 'Your password has been changed.',
+                    date: new Date(),
+                    type: Severity.SUCCESS,
+                }),
+            );
+        } catch (err) {
+            dispatch(transactionFailure());
+            dispatch(
+                notify({
+                    message: err.message,
+                    date: new Date(),
+                    type: Severity.DANGER,
+                }),
+            );
+        }
     };
 };
 
 export const deleteAccount = (password: string) => {
-    return (dispatch: any, getState: () => RootState) => {
-        (async () => {
-            dispatch(transactionBegin(AuthTransactionType.DELETE_ACCOUNT));
-            try {
-                await getState().auth.krypton.delete(password);
-                dispatch(transactionSuccess());
-                dispatch(
-                    notify({
-                        message: 'Your account has been deleted successfully.',
-                        date: new Date(),
-                        type: Severity.SUCCESS,
-                        title: Severity.SUCCESS.charAt(0).toUpperCase() + Severity.INFO.slice(1),
-                    }),
-                );
-                dispatch(removeLoggedUSer());
-            } catch (err) {
-                dispatch(transactionFailure(err.message));
-            }
-        })();
+    return async (dispatch: any, getState: () => RootState) => {
+        dispatch(transactionBegin(AuthTransactionType.DELETE_ACCOUNT));
+        try {
+            await getState().auth.krypton.delete(password);
+            dispatch(transactionSuccess());
+            dispatch(
+                notify({
+                    message: 'Your account has been deleted successfully.',
+                    date: new Date(),
+                    type: Severity.SUCCESS,
+                }),
+            );
+            dispatch(removeLoggedUSer());
+        } catch (err) {
+            dispatch(transactionFailure(err.message));
+        }
     };
 };
 
 export const updateEmail = (email: string) => {
-    return (dispatch: any, getState: () => RootState) => {
-        (async () => {
-            dispatch(transactionBegin(AuthTransactionType.UPDATE_EMAIL));
-            try {
-                await getState().auth.krypton.update({ email });
-                dispatch(transactionSuccess());
-                dispatch(addLoggedUSer(getState().auth.krypton.getUser()));
-                dispatch(
-                    notify({
-                        message: 'Email successfully updated.',
-                        date: new Date(),
-                        type: Severity.SUCCESS,
-                        title: Severity.SUCCESS.charAt(0).toUpperCase() + Severity.SUCCESS.slice(1),
-                    }),
-                );
-            } catch (err) {
-                dispatch(transactionFailure());
-                dispatch(
-                    notify({
-                        message: err.message,
-                        date: new Date(),
-                        type: Severity.DANGER,
-                        title: 'Error',
-                    }),
-                );
-            }
-        })();
+    return async (dispatch: any, getState: () => RootState) => {
+        dispatch(transactionBegin(AuthTransactionType.UPDATE_EMAIL));
+        try {
+            await getState().auth.krypton.update({ email });
+            dispatch(transactionSuccess());
+            dispatch(addLoggedUSer(getState().auth.krypton.getUser()));
+            dispatch(
+                notify({
+                    message: 'Email successfully updated.',
+                    date: new Date(),
+                    type: Severity.SUCCESS,
+                }),
+            );
+        } catch (err) {
+            dispatch(transactionFailure());
+            dispatch(
+                notify({
+                    message: err.message,
+                    date: new Date(),
+                    type: Severity.DANGER,
+                }),
+            );
+        }
     };
 };
 

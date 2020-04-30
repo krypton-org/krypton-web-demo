@@ -31,24 +31,22 @@ The different methods of [krypton-web] like log-in, registration are called with
 ```javascript
 // src/redux/actions/AuthActions.ts
 export const login = (email: string, password: string) => {
-    return (dispatch: any, getState: () => RootState) => {
-        (async () => {
-            dispatch(transactionBegin(AuthTransactionType.LOGIN));
-            try {
-                await getState().auth.krypton.login(email, password); // here it is
-                dispatch(transactionSuccess());
-                dispatch(addLoggedUSer(getState().auth.krypton.getUser()));
-                dispatch(
-                    notify({
-                        message: 'Log-in successful!',
-                        date: new Date(),
-                        type: Severity.SUCCESS,
-                    }),
-                );
-            } catch (err) {
-                dispatch(transactionFailure(err.message));
-            }
-        })();
+    return async (dispatch: any, getState: () => RootState) => {
+        dispatch(transactionBegin(AuthTransactionType.LOGIN));
+        try {
+            await getState().auth.krypton.login(email, password); // Here it is
+            dispatch(transactionSuccess());
+            dispatch(addLoggedUSer(getState().auth.krypton.getUser()));
+            dispatch(
+                notify({
+                    message: 'Log-in successful!',
+                    date: new Date(),
+                    type: Severity.SUCCESS,
+                }),
+            );
+        } catch (err) {
+            dispatch(transactionFailure(err.message));
+        }
     };
 };
 

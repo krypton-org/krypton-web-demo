@@ -15,7 +15,6 @@ const PrivateRoute: React.FC<any> = ({ children, isLoggedIn, dispatch, ...rest }
                     message: 'Please log-in',
                     date: new Date(),
                     type: Severity.WARNING,
-                    title: 'Error',
                 }),
             );
             return false;

@@ -8,7 +8,6 @@ export enum Severity {
 
 export interface Notification {
     message: string;
-    title: string;
     type: Severity;
     date: Date;
 }

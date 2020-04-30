@@ -33,7 +33,11 @@ class UpdateEmail extends Component<Props, State> {
     }
 
     handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>): void => {
-        this.setState({ ...this.state, email: event.target.value, isEmailValid: isEmailValid(event.target.value) });
+        this.setState({
+            ...this.state,
+            email: event.target.value,
+            isEmailValid: isEmailValid(event.target.value),
+        });
     };
 
     handleSubmit = (event?: React.FormEvent<HTMLButtonElement>): void | undefined => {
