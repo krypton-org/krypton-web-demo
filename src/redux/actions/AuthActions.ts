@@ -18,11 +18,12 @@ export const checkLoginState = () => {
 
 export const login = (email: string, password: string) => {
     return async (dispatch: any, getState: () => RootState) => {
+        const krypton = getState().auth.krypton;
         dispatch(transactionBegin(AuthTransactionType.LOGIN));
         try {
-            await getState().auth.krypton.login(email, password);
+            await krypton.login(email, password);
             dispatch(transactionSuccess());
-            dispatch(addLoggedUSer(getState().auth.krypton.getUser()));
+            dispatch(addLoggedUSer(krypton.getUser()));
             dispatch(
                 notify({
                     message: 'Log-in successful!',

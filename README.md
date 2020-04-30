@@ -33,10 +33,11 @@ The different methods of [krypton-web] like log-in, registration are called with
 export const login = (email: string, password: string) => {
     return async (dispatch: any, getState: () => RootState) => {
         dispatch(transactionBegin(AuthTransactionType.LOGIN));
+        const krypton = getState().auth.krypton;
         try {
-            await getState().auth.krypton.login(email, password); // Here it is
+            await krypton.login(email, password); // Here it is
             dispatch(transactionSuccess());
-            dispatch(addLoggedUSer(getState().auth.krypton.getUser()));
+            dispatch(addLoggedUSer(krypton.getUser()));
             dispatch(
                 notify({
                     message: 'Log-in successful!',
