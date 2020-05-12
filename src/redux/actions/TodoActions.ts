@@ -9,7 +9,7 @@ export const addTodo = (text: string) => {
         try {
             const graphQLQuery = addTodoQuery(text, getState().auth.krypton.getUser()._id);
             const res = await sendRequest(getState().auth.krypton.getAuthorizationHeader(), graphQLQuery);
-            if (res.data) {
+            if (!res.errors) {
                 const todo = res.data.todoCreateOne.record;
                 dispatch(transactionSuccess([todo, ...getState().todo.list]));
             } else {
@@ -34,7 +34,7 @@ export const deleteTodo = (todoId: string) => {
         try {
             const graphQLQuery = deleteTodoQuery(todoId);
             const res = await sendRequest(getState().auth.krypton.getAuthorizationHeader(), graphQLQuery);
-            if (res.data) {
+            if (!res.errors) {
                 const todos = getState().todo.list.filter((todo) => todo._id !== res.data.todoRemoveById.record._id);
                 dispatch(transactionSuccess(todos));
             } else {
@@ -59,7 +59,7 @@ export const completeTodo = (todoId: string) => {
         try {
             const graphQLQuery = completeTodoQuery(todoId);
             const res = await sendRequest(getState().auth.krypton.getAuthorizationHeader(), graphQLQuery);
-            if (res.data) {
+            if (!res.errors) {
                 const todo = res.data.todoUpdateById.record;
                 dispatch(
                     transactionSuccess(
@@ -88,8 +88,8 @@ export const fetchTodo = () => {
         try {
             const graphQLQuery = fetchTodoQuery(getState().auth.krypton.getUser()._id);
             const res = await sendRequest(getState().auth.krypton.getAuthorizationHeader(), graphQLQuery);
-            if (res.data) {
-                dispatch(transactionSuccess(res.data.todoMany));
+            if (!res.errors) {
+                dispatch(transactionSuccess([...res.data.todoMany]));
             } else {
                 throw new Error('Transaction failed');
             }
