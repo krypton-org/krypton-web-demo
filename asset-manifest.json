@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/krypton-web-demo/static/css/main.6b6f01a6.chunk.css",
+    "main.js": "/krypton-web-demo/static/js/main.b239a901.chunk.js",
+    "main.js.map": "/krypton-web-demo/static/js/main.b239a901.chunk.js.map",
+    "runtime-main.js": "/krypton-web-demo/static/js/runtime-main.1cdcde2b.js",
+    "runtime-main.js.map": "/krypton-web-demo/static/js/runtime-main.1cdcde2b.js.map",
+    "static/css/2.cd1899df.chunk.css": "/krypton-web-demo/static/css/2.cd1899df.chunk.css",
+    "static/js/2.30082d40.chunk.js": "/krypton-web-demo/static/js/2.30082d40.chunk.js",
+    "static/js/2.30082d40.chunk.js.map": "/krypton-web-demo/static/js/2.30082d40.chunk.js.map",
+    "index.html": "/krypton-web-demo/index.html",
+    "precache-manifest.0de33782875d4ae1d7c3232a92cca17a.js": "/krypton-web-demo/precache-manifest.0de33782875d4ae1d7c3232a92cca17a.js",
+    "service-worker.js": "/krypton-web-demo/service-worker.js",
+    "static/css/2.cd1899df.chunk.css.map": "/krypton-web-demo/static/css/2.cd1899df.chunk.css.map",
+    "static/css/main.6b6f01a6.chunk.css.map": "/krypton-web-demo/static/css/main.6b6f01a6.chunk.css.map",
+    "static/js/2.30082d40.chunk.js.LICENSE.txt": "/krypton-web-demo/static/js/2.30082d40.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1cdcde2b.js",
+    "static/css/2.cd1899df.chunk.css",
+    "static/js/2.30082d40.chunk.js",
+    "static/css/main.6b6f01a6.chunk.css",
+    "static/js/main.b239a901.chunk.js"
+  ]
+}
