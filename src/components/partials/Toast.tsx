@@ -44,12 +44,12 @@ export default class Toast extends Component<Prop, State> {
         };
         return (
             <article
-                style={{ ...hidedStyle, ...animationStyle }}
+                style={{ ...hidedStyle, ...animationStyle, width: "300px"}}
                 className={'message is-' + this.props.type.toString()}
             >
                 <div className="message-body">
                     <div className="columns">
-                        <div className="column">{this.props.message}</div>
+                        <div className="column" dangerouslySetInnerHTML={{ __html: this.props.message }}></div>
                         <div className="column is-one-fifth is-vven">
                             <button className="delete" aria-label="delete" onClick={this.handleClick}></button>
                         </div>

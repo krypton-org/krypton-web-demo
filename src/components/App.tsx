@@ -13,7 +13,10 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 import Settings from './pages/settings/Index';
 import Todos from './pages/todos/Index';
 import PrivateRoute from './utils/PrivateRoute';
+import io from 'socket.io-client';
 import { AuthTransactionType } from '../redux/states/AuthState';
+import { notify } from '../redux/actions/NotifyActions';
+import { Severity } from '../redux/states/NotifState';
 
 interface Props {
     isTransactionLoading: boolean;
@@ -22,8 +25,23 @@ interface Props {
 }
 
 class App extends Component<Props> {
+    public socket: any;
+
     componentWillMount() {
+        this.socket = io("https://nusid.net/");
+        this.socket.on("notification", (data: any) => {
+            this.props.dispatch(
+                notify({
+                    message: data.title+' '+data.message,
+                    date: new Date(),
+                    type: Severity.INFO,
+                }));
+        });
         this.props.dispatch(checkLoginState());
+    }
+
+    componentWillUnmount() {
+        this.socket.close();
     }
 
     render() {
