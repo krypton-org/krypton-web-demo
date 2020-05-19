@@ -114,13 +114,13 @@ class LoginModal extends Component<Props, State> {
                                     </span>
                                 </div>
                             </div>
-                            <button className="button-link" onClick={this.props.openRecoverPasswordModalModal}>
+                            <button className="button-link" onClick={this.props.openRecoverPasswordModalModal} type="button">
                                 Password forgotten?
                             </button>
                             <hr />
                             <div style={{ textAlign: 'center' }}>
                                 No account yet?{' '}
-                                <button className="button-link" onClick={this.props.openSignupModal}>
+                                <button className="button-link" onClick={this.props.openSignupModal} type="button">
                                     Sign up
                                 </button>
                                 .

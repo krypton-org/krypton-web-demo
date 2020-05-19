@@ -169,7 +169,7 @@ class SignUpModal extends Component<Props, State> {
                                 {showPasswordSuccessTips && <p className="help is-success">This password is valid</p>}
                             </div>
                             Already have an account?{' '}
-                            <button className="button-link" onClick={this.props.openloginModal}>
+                            <button className="button-link" onClick={this.props.openloginModal} type="button">
                                 log-in
                             </button>
                             .
